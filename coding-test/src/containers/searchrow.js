@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { searchRowPosts } from "../actions/actions";
 import SearchRows from "../components/searchrows";
 
-class SearchRow extends React.Component {
+export class SearchRow extends React.Component {
   clearSearchResults = () => {
     this.props.dispatch(searchRowPosts([]));
   };
