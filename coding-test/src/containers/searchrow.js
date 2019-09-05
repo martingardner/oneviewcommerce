@@ -9,7 +9,6 @@ class SearchRow extends React.Component {
     this.props.dispatch(searchRowPosts([]));
   };
   render() {
-    console.log("searchrowposts", this.props.searchrowposts);
     return (
       <>
         <h2>Search Row Posts</h2>
