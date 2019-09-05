@@ -15,7 +15,7 @@ class Table extends React.Component {
 
   searchForNameReturn = () => {
     let newArr = [];
-    let searchName = this.props.data.map(val => {
+    this.props.data.forEach(val => {
       if (val.name.includes(this.state.searchterm)) {
         newArr.push(val);
       }
@@ -52,7 +52,7 @@ class Table extends React.Component {
           <tbody>
             {dataMap.length > 0 &&
               dataMap.map(val => {
-                return <TableRow rowdata={val} key={val.id} />;
+                return <TableRow rowdata={val} key={`tablerow${val.id}`} />;
               })}
           </tbody>
         </table>

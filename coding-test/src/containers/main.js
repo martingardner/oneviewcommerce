@@ -4,6 +4,7 @@ import axios from "axios";
 
 import { initialData } from "../actions/actions";
 import Table from "./table";
+import SearchRow from "./searchrow";
 
 class Main extends React.Component {
   componentDidMount() {
@@ -18,7 +19,12 @@ class Main extends React.Component {
     let data = this.props.data;
     let mainValue = data && data.length > 0 ? <Table /> : "Loading";
 
-    return <div>{mainValue}</div>;
+    return (
+      <div>
+        {mainValue}
+        {this.props.searchrowposts.length > 0 && <SearchRow />}
+      </div>
+    );
   }
 }
 

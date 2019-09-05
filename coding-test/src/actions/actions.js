@@ -4,3 +4,10 @@ export function initialData(data) {
     data: data
   };
 }
+
+export function searchRowPosts(data) {
+  return {
+    type: "SEARCH_ROW_POSTS",
+    data: data
+  };
+}
