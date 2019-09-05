@@ -7,7 +7,6 @@ class Table extends React.Component {
   state = { searchterm: "" };
 
   updateSearchTerm = e => {
-    //console.log("updateSearchTerm", e.target.value);
     let term = e.target.value;
     this.setState(() => {
       return { searchterm: term };
@@ -15,15 +14,22 @@ class Table extends React.Component {
   };
 
   searchForNameReturn = () => {
-    console.log("searchForNameReturn", this.props.data, this.state.searchterm);
+    let newArr = [];
+    let searchName = this.props.data.map(val => {
+      if (val.name.includes(this.state.searchterm)) {
+        newArr.push(val);
+      }
+    });
+
+    return newArr;
   };
 
   render() {
-    console.log("table", this.props.data);
     let dataMap =
-      this.state.searchterm.length < 0
-        ? this.searchForNameReturn
+      this.state.searchterm.length > 0
+        ? this.searchForNameReturn()
         : this.props.data;
+
     return (
       <>
         <div>
@@ -44,9 +50,10 @@ class Table extends React.Component {
             </tr>
           </thead>
           <tbody>
-            {dataMap.map(val => {
-              return <TableRow rowdata={val} key={val.id} />;
-            })}
+            {dataMap.length > 0 &&
+              dataMap.map(val => {
+                return <TableRow rowdata={val} key={val.id} />;
+              })}
           </tbody>
         </table>
       </>

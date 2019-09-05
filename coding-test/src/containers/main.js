@@ -8,7 +8,6 @@ import Table from "./table";
 class Main extends React.Component {
   componentDidMount() {
     axios.get("https://jsonplaceholder.typicode.com/users").then(res => {
-      console.log("ress", res);
       if (res.hasOwnProperty("data")) {
         this.props.dispatch(initialData(res.data));
       }
@@ -16,7 +15,6 @@ class Main extends React.Component {
   }
 
   render() {
-    console.log("main this.props.data", this.props.data);
     let data = this.props.data;
     let mainValue = data && data.length > 0 ? <Table /> : "Loading";
 

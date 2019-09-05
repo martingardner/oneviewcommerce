@@ -3,8 +3,6 @@ import { connect } from "react-redux";
 
 class TableRow extends React.Component {
   render() {
-    //console.log("tablerow", this.props.rowdata);
-
     return (
       <tr>
         <td>{this.props.rowdata.name}</td>
