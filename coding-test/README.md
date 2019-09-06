@@ -16,5 +16,5 @@
 
 # To Do
 
-- get the jest mocks of the axios to work correctly
+- get the jest mocks of the axios to work correctly (currently making live calls)
 - with the above, get the set timeout out of there
