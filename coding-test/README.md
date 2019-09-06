@@ -1,6 +1,6 @@
 # To Install
 
-- git clone https://github.com/martingardner/oneviewcommerce/tree/master/coding-test.git
+- git clone https://github.com/martingardner/oneviewcommerce.git
 - cd coding-test
 - npm install
 
