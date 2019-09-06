@@ -9,6 +9,7 @@ export class SearchRow extends React.Component {
     this.props.dispatch(searchRowPosts([]));
   };
   render() {
+    console.log("searchrow", this.props);
     return (
       <>
         <h2>Search Row Posts</h2>

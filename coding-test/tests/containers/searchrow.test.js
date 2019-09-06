@@ -4,13 +4,16 @@ import { Provider } from "react-redux";
 import { render, cleanup } from "@testing-library/react";
 import SearchRow from "../../src/containers/searchrow.js";
 import AppReducers from "../../src/reducers/reducers";
+import { searchRowPosts } from "../../src/actions/actions";
 
 afterEach(() => {
   cleanup;
 });
 
-const returnReduxSetup = () => {
-  let store = createStore(AppReducers);
+const returnReduxSetup = initvalues => {
+  let store = initvalues
+    ? createStore(AppReducers, initvalues)
+    : createStore(AppReducers);
   return {
     ...render(
       <Provider store={store}>
@@ -28,5 +31,26 @@ describe("SearchRow container", () => {
     expect(document.querySelector("h2")).toBeTruthy();
   });
 
-  it("by default tbody should be empty", () => {});
+  it("by default tbody should be empty", () => {
+    const component = returnReduxSetup();
+    expect(document.querySelector("table tbody tr")).toBeNull();
+  });
+
+  it("should have 1 row of data if searchrowposts has one row of data", () => {
+    const dummydata = {
+      searchrowposts: [
+        {
+          userId: 1,
+          id: 1,
+          title: "Title",
+          body: "body"
+        }
+      ]
+    };
+    const component = returnReduxSetup(dummydata);
+
+    expect(
+      document.querySelector("table tbody tr td:first-child").innerHTML
+    ).toBe("Title");
+  });
 });
