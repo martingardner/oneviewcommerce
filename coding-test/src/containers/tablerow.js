@@ -32,14 +32,13 @@ class TableRow extends React.Component {
   }
 
   render() {
-    //console.log("props hit");
     let rowClassName = this.state.clicked ? "row-clicked" : "";
     return (
       <tr className={rowClassName} onClick={this.dataPosts}>
-        <td>{this.props.rowdata.name}</td>
-        <td>{this.props.rowdata.email}</td>
-        <td>{this.props.rowdata.address.city}</td>
-        <td>{this.props.rowdata.company.name}</td>
+        <td className="tablerow-name">{this.props.rowdata.name}</td>
+        <td className="tablerow-email">{this.props.rowdata.email}</td>
+        <td className="tablerow-city">{this.props.rowdata.address.city}</td>
+        <td className="tablerow-company">{this.props.rowdata.company.name}</td>
       </tr>
     );
   }

@@ -4,7 +4,6 @@ import { Provider } from "react-redux";
 import { render, cleanup, fireEvent } from "@testing-library/react";
 import SearchRow from "../../src/containers/searchrow.js";
 import AppReducers from "../../src/reducers/reducers";
-import { searchRowPosts } from "../../src/actions/actions";
 
 afterEach(() => {
   cleanup;
