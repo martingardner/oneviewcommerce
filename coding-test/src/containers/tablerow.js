@@ -13,6 +13,7 @@ class TableRow extends React.Component {
         `https://jsonplaceholder.typicode.com/posts?userId=${this.props.rowdata.id}`
       )
       .then(res => {
+        console.log("GIVE ME THE DATA", res);
         if (res.hasOwnProperty("data")) {
           this.props.dispatch(searchRowPosts(res.data));
           this.setState(() => {

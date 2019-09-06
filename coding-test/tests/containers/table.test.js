@@ -12,7 +12,7 @@ afterEach(() => {
 });
 
 const returnReduxSetup = () => {
-  let store = createStore(AppReducers, data);
+  let store = createStore(AppReducers, { data: data });
 
   return {
     ...render(

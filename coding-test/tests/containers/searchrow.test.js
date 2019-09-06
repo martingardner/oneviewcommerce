@@ -24,7 +24,7 @@ const returnReduxSetup = initvalues => {
 };
 
 describe("SearchRow container", () => {
-  it("should render wtihout breaking", () => {
+  it("should render without breaking", () => {
     const component = returnReduxSetup();
     expect(component).toBeTruthy();
     expect(document.querySelector("h2")).toBeTruthy();
