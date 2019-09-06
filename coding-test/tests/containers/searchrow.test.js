@@ -51,6 +51,10 @@ describe("SearchRow container", () => {
     expect(
       document.querySelector("table tbody tr td:first-child").innerHTML
     ).toBe("Title");
+
+    expect(
+      document.querySelector("table tbody tr td:last-child").innerHTML
+    ).toBe("body");
   });
 
   it("should remove the row of searchrows data if clear search results is clicked emptying tbody", () => {
