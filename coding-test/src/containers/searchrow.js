@@ -9,12 +9,11 @@ export class SearchRow extends React.Component {
     this.props.dispatch(searchRowPosts([]));
   };
   render() {
-    console.log("searchrow", this.props);
     return (
       <>
         <h2>Search Row Posts</h2>
         <div>
-          <button onClick={this.clearSearchResults}>
+          <button className="clear-results" onClick={this.clearSearchResults}>
             Clear Search Results
           </button>
         </div>
