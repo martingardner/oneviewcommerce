@@ -31,6 +31,12 @@ class TableRow extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    this.setState(() => {
+      return { clicked: false };
+    });
+  }
+
   render() {
     let rowClassName = this.state.clicked ? "row-clicked" : "";
     return (

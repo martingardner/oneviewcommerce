@@ -17,7 +17,7 @@ export class SearchRow extends React.Component {
             Clear Search Results
           </button>
         </div>
-        <table>
+        <table className="searchrow-posts">
           <thead>
             <tr>
               <th>Title</th>

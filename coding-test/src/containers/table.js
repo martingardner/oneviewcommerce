@@ -40,7 +40,7 @@ class Table extends React.Component {
             onChange={this.updateSearchTerm}
           />
         </div>
-        <table>
+        <table className="user-table">
           <thead>
             <tr>
               <th>Name</th>

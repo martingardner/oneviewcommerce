@@ -9,7 +9,7 @@ afterEach(() => {
   cleanup;
 });
 
-const returnReduxSetup = initvalues => {
+const returnReduxSetup = () => {
   let rowdata = {
     name: "Leanne Graham",
     email: "Sincere@april.biz",
@@ -20,9 +20,7 @@ const returnReduxSetup = initvalues => {
       name: "Romaguera-Crona"
     }
   };
-  let store = initvalues
-    ? createStore(AppReducers, initvalues)
-    : createStore(AppReducers);
+  let store = createStore(AppReducers);
   return {
     ...render(
       <Provider store={store}>
